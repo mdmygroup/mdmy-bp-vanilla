@@ -31,10 +31,12 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: '#16A34A',
+                        brand: '#80ab97',
+                        brandLight: '#cbecdd',
+                        brandDark: '#386D56',
                         accent: '#F97316',
                         bgColor: '#FFFFFF',
-                        textColor: '#111827'
+                        textColor: '#102611'
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif']
@@ -52,8 +54,8 @@
         /* Hero background pattern */
         .hero-pattern {
             background-image: 
-                linear-gradient(rgba(22, 163, 74, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(22, 163, 74, 0.05) 1px, transparent 1px);
+                linear-gradient(rgba(16, 185, 129, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(16, 185, 129, 0.04) 1px, transparent 1px);
             background-size: 40px 40px;
         }
         
@@ -77,22 +79,22 @@
                 <!-- Logo -->
                 <a href="/" class="flex items-center space-x-3">
                     <img src="assets/logo-bizot-paysagistes.png" alt="Bizot Paysagistes Logo" class="h-12 w-auto">
-                    <span class="text-xl font-bold text-brand hidden sm:inline">Bizot Paysagistes</span>
+                    <span class="text-xl font-bold text-brandDark hidden sm:inline">Bizot Paysagistes</span>
                 </a>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#accueil" class="text-textColor hover:text-brand transition-colors font-medium">Accueil</a>
-                    <a href="#services" class="text-textColor hover:text-brand transition-colors font-medium">Services</a>
-                    <a href="#realisations" class="text-textColor hover:text-brand transition-colors font-medium">Réalisations</a>
-                    <a href="#a-propos" class="text-textColor hover:text-brand transition-colors font-medium">À Propos</a>
-                    <a href="#contact" class="bg-brand text-white px-6 py-2.5 rounded-lg hover:bg-green-700 transition-colors font-semibold">
+                    <a href="#accueil" class="text-textColor hover:text-brandDark transition-colors font-medium">Accueil</a>
+                    <a href="#services" class="text-textColor hover:text-brandDark transition-colors font-medium">Services</a>
+                    <a href="#realisations" class="text-textColor hover:text-brandDark transition-colors font-medium">Réalisations</a>
+                    <a href="#a-propos" class="text-textColor hover:text-brandDark transition-colors font-medium">À Propos</a>
+                    <a href="#contact" class="bg-brandDark text-white px-6 py-2.5 rounded-lg hover:bg-brand transition-colors font-semibold">
                         Demander un Devis
                     </a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-textColor hover:text-brand">
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-textColor hover:text-brandDark">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -102,11 +104,11 @@
             <!-- Mobile Navigation -->
             <div id="mobile-menu" class="hidden md:hidden pb-4">
                 <div class="flex flex-col space-y-3">
-                    <a href="#accueil" class="text-textColor hover:text-brand transition-colors font-medium py-2">Accueil</a>
-                    <a href="#services" class="text-textColor hover:text-brand transition-colors font-medium py-2">Services</a>
-                    <a href="#realisations" class="text-textColor hover:text-brand transition-colors font-medium py-2">Réalisations</a>
-                    <a href="#a-propos" class="text-textColor hover:text-brand transition-colors font-medium py-2">À Propos</a>
-                    <a href="#contact" class="bg-brand text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold text-center">
+                    <a href="#accueil" class="text-textColor hover:text-brandDark transition-colors font-medium py-2">Accueil</a>
+                    <a href="#services" class="text-textColor hover:text-brandDark transition-colors font-medium py-2">Services</a>
+                    <a href="#realisations" class="text-textColor hover:text-brandDark transition-colors font-medium py-2">Réalisations</a>
+                    <a href="#a-propos" class="text-textColor hover:text-brandDark transition-colors font-medium py-2">À Propos</a>
+                    <a href="#contact" class="bg-brandDark text-white px-6 py-3 rounded-lg hover:bg-brand transition-colors font-semibold text-center">
                         Demander un Devis
                     </a>
                 </div>
@@ -120,7 +122,7 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <!-- Hero Content -->
                 <div class="fade-in">
-                    <div class="inline-block bg-brand/10 text-brand px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    <div class="inline-block bg-brandDark/10 text-brandDark px-4 py-2 rounded-full text-sm font-semibold mb-6">
                         ✨ Plus de 40 ans d'expertise
                     </div>
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-textColor leading-tight mb-6">
@@ -132,10 +134,10 @@
                         Solutions sur-mesure pour particuliers, entreprises et copropriétés.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#contact" class="bg-brand text-white px-8 py-4 rounded-xl hover:bg-green-700 transition-all shadow-lg hover:shadow-xl font-semibold text-center text-lg">
+                        <a href="#contact" class="bg-brandDark text-white px-8 py-4 rounded-xl hover:bg-brand transition-all shadow-lg hover:shadow-xl font-semibold text-center text-lg">
                             Demander un Devis Gratuit
                         </a>
-                        <a href="#services" class="bg-white border-2 border-brand text-brand px-8 py-4 rounded-xl hover:bg-brand hover:text-white transition-all font-semibold text-center text-lg">
+                        <a href="#services" class="bg-white border-2 border-brandDark text-brandDark px-8 py-4 rounded-xl hover:bg-brand hover:text-white hover:border-brand transition-all font-semibold text-center text-lg">
                             Découvrir nos Services
                         </a>
                     </div>
@@ -165,6 +167,115 @@
                         <div class="text-3xl font-bold text-accent">1000+</div>
                         <div class="text-sm text-gray-600 font-medium">Projets Réalisés</div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Reviews Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-5 lg:px-20">
+            <div class="max-w-6xl mx-auto">
+                <!-- Google Rating Header -->
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center justify-center gap-3 mb-4">
+                        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" class="h-8">
+                        <span class="text-2xl font-bold text-textColor">Avis</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-2 mb-3">
+                        <div class="flex gap-1">
+                            <svg class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="w-8 h-8 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <span class="text-4xl font-bold text-textColor">4.9</span>
+                    </div>
+                    <p class="text-gray-600 font-medium">Basé sur <strong>127 avis</strong> Google</p>
+                </div>
+
+                <!-- Reviews Grid -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Review 1 -->
+                    <div class="bg-gradient-to-br from-emerald-50 to-white p-6 rounded-xl shadow-md border border-emerald-100 hover:shadow-lg transition-shadow">
+                        <div class="flex gap-1 mb-3">
+                            <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            "Excellent travail pour l'aménagement de notre jardin. L'équipe est professionnelle, à l'écoute et respecte les délais. Je recommande vivement !"
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-brand rounded-full flex items-center justify-center text-white font-bold">
+                                MC
+                            </div>
+                            <div>
+                                <div class="font-semibold text-textColor">Marie Caron</div>
+                                <div class="text-sm text-gray-500">Il y a 2 semaines</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="bg-gradient-to-br from-emerald-50 to-white p-6 rounded-xl shadow-md border border-emerald-100 hover:shadow-lg transition-shadow">
+                        <div class="flex gap-1 mb-3">
+                            <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            "Service d'entretien impeccable pour notre copropriété depuis 3 ans. Toujours soigneux et ponctuels. Les espaces verts n'ont jamais été aussi beaux !"
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-brand rounded-full flex items-center justify-center text-white font-bold">
+                                JD
+                            </div>
+                            <div>
+                                <div class="font-semibold text-textColor">Jean Dubois</div>
+                                <div class="text-sm text-gray-500">Il y a 1 mois</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="bg-gradient-to-br from-emerald-50 to-white p-6 rounded-xl shadow-md border border-emerald-100 hover:shadow-lg transition-shadow">
+                        <div class="flex gap-1 mb-3">
+                            <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            "Prestation d'élagage réalisée avec grand soin. Conseils avisés et travail soigné. Une équipe de vrais experts qui maîtrise leur métier !"
+                        </p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-brand rounded-full flex items-center justify-center text-white font-bold">
+                                SL
+                            </div>
+                            <div>
+                                <div class="font-semibold text-textColor">Sophie Laurent</div>
+                                <div class="text-sm text-gray-500">Il y a 3 semaines</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA to see all reviews -->
+                <div class="text-center mt-10">
+                    <a href="https://www.google.com/search?q=bizot+paysagistes" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center gap-2 text-brand hover:text-emerald-600 font-semibold transition-colors">
+                        <span>Voir tous les avis Google</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
@@ -209,7 +320,7 @@
                             <span>Plantations & végétalisation</span>
                         </li>
                     </ul>
-                    <a href="#contact" class="inline-flex items-center text-brand font-semibold hover:text-green-700 transition-colors">
+                    <a href="#contact" class="inline-flex items-center text-brandDark font-semibold hover:text-green-700 transition-colors">
                         En savoir plus 
                         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -241,7 +352,7 @@
                             <span>Nettoyage & ramassage</span>
                         </li>
                     </ul>
-                    <a href="#contact" class="inline-flex items-center text-brand font-semibold hover:text-green-700 transition-colors">
+                    <a href="#contact" class="inline-flex items-center text-brandDark font-semibold hover:text-emerald-600 transition-colors">
                         En savoir plus 
                         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -273,7 +384,7 @@
                             <span>Diagnostic phytosanitaire</span>
                         </li>
                     </ul>
-                    <a href="#contact" class="inline-flex items-center text-brand font-semibold hover:text-green-700 transition-colors">
+                    <a href="#contact" class="inline-flex items-center text-brandDark font-semibold hover:text-emerald-600 transition-colors">
                         En savoir plus 
                         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -285,13 +396,13 @@
     </section>
 
     <!-- Target Clients Section -->
-    <section class="py-24 bg-brand text-white">
+    <section class="py-24 bg-gradient-to-br from-emerald-500 to-emerald-600 text-white">
         <div class="container mx-auto px-5 lg:px-20">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">
                     Des Solutions pour Tous vos Besoins
                 </h2>
-                <p class="text-lg text-green-50">
+                <p class="text-lg text-emerald-50">
                     Que vous soyez particulier, entreprise ou copropriété, nous avons l'expertise pour répondre à vos attentes.
                 </p>
             </div>
@@ -301,7 +412,7 @@
                 <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all">
                     <div class="text-5xl mb-4">🏡</div>
                     <h3 class="text-2xl font-bold mb-4">Particuliers</h3>
-                    <p class="text-green-50 leading-relaxed">
+                    <p class="text-emerald-50 leading-relaxed">
                         Transformez votre jardin en un véritable havre de paix. Du petit jardin urbain au grand parc, 
                         nous créons l'espace de vos rêves.
                     </p>
@@ -311,7 +422,7 @@
                 <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all">
                     <div class="text-5xl mb-4">🏢</div>
                     <h3 class="text-2xl font-bold mb-4">Entreprises</h3>
-                    <p class="text-green-50 leading-relaxed">
+                    <p class="text-emerald-50 leading-relaxed">
                         Valorisez votre image avec des espaces verts professionnels et accueillants. 
                         Entretien régulier et aménagements sur-mesure.
                     </p>
@@ -321,7 +432,7 @@
                 <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all">
                     <div class="text-5xl mb-4">🏘️</div>
                     <h3 class="text-2xl font-bold mb-4">Copropriétés & Syndics</h3>
-                    <p class="text-green-50 leading-relaxed">
+                    <p class="text-emerald-50 leading-relaxed">
                         Gestion complète des espaces communs. Contrats annuels flexibles avec interventions planifiées 
                         pour un cadre de vie agréable.
                     </p>
@@ -425,7 +536,7 @@
             </div>
             
             <div class="text-center mt-12">
-                <a href="#contact" class="inline-block bg-brand text-white px-8 py-4 rounded-xl hover:bg-green-700 transition-all font-semibold text-lg">
+                <a href="#contact" class="inline-block bg-brand text-white px-8 py-4 rounded-xl hover:bg-emerald-600 transition-all font-semibold text-lg">
                     Voir Plus de Projets
                 </a>
             </div>
@@ -438,7 +549,7 @@
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <!-- Content -->
                 <div>
-                    <div class="inline-block bg-brand/10 text-brand px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    <div class="inline-block bg-brandDark/10 text-brandDark px-4 py-2 rounded-full text-sm font-semibold mb-6">
                         Notre Histoire
                     </div>
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-textColor mb-6">
@@ -544,7 +655,7 @@
     </section>
 
     <!-- Contact / CTA Section -->
-    <section id="contact" class="py-24 bg-gradient-to-br from-brand to-green-700 text-white">
+    <section id="contact" class="py-24 bg-gradient-to-br from-brand to-brandDark text-white">
         <div class="container mx-auto px-5 lg:px-20">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <!-- Contact Info -->
@@ -552,7 +663,7 @@
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
                         Parlons de Votre Projet
                     </h2>
-                    <p class="text-lg text-green-50 mb-8 leading-relaxed">
+                    <p class="text-lg text-emerald-50 mb-8 leading-relaxed">
                         Que ce soit pour un devis, un conseil ou simplement pour en savoir plus sur nos services, 
                         notre équipe est à votre écoute.
                     </p>
@@ -566,7 +677,7 @@
                             </div>
                             <div>
                                 <div class="font-semibold text-lg mb-1">Téléphone</div>
-                                <a href="tel:+33123456789" class="text-green-100 hover:text-white transition-colors">
+                                <a href="tel:+33123456789" class="text-emerald-100 hover:text-white transition-colors">
                                     01 23 45 67 89
                                 </a>
                             </div>
@@ -580,7 +691,7 @@
                             </div>
                             <div>
                                 <div class="font-semibold text-lg mb-1">Email</div>
-                                <a href="mailto:contact@bizot-paysagistes.com" class="text-green-100 hover:text-white transition-colors">
+                                <a href="mailto:contact@bizot-paysagistes.com" class="text-emerald-100 hover:text-white transition-colors">
                                     contact@bizot-paysagistes.com
                                 </a>
                             </div>
@@ -594,7 +705,7 @@
                             </div>
                             <div>
                                 <div class="font-semibold text-lg mb-1">Horaires</div>
-                                <div class="text-green-100">
+                                <div class="text-emerald-100">
                                     Lundi - Vendredi : 8h - 18h<br>
                                     Samedi : 9h - 13h
                                 </div>
@@ -645,7 +756,7 @@
                         </div>
                         
                         <button type="submit" 
-                                class="w-full bg-brand text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-all font-semibold text-lg shadow-lg hover:shadow-xl">
+                                class="w-full bg-brand text-white px-8 py-4 rounded-lg hover:bg-emerald-600 transition-all font-semibold text-lg shadow-lg hover:shadow-xl">
                             Envoyer ma Demande
                         </button>
                         
