@@ -160,11 +160,15 @@
                     </div>
                     <!-- Floating Stats -->
                     <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
-                        <div class="text-3xl font-bold text-brand">40+</div>
+                        <div class="text-3xl font-bold text-brand">
+                            <span id="hero-years-count">0</span>+
+                        </div>
                         <div class="text-sm text-gray-600 font-medium">Années d'Expertise</div>
                     </div>
                     <div class="absolute -top-6 -right-6 bg-white p-6 rounded-xl shadow-xl">
-                        <div class="text-3xl font-bold text-accent">1000+</div>
+                        <div class="text-3xl font-bold text-accent">
+                            <span id="hero-projects-count">0</span>+
+                        </div>
                         <div class="text-sm text-gray-600 font-medium">Projets Réalisés</div>
                     </div>
                 </div>
@@ -736,6 +740,50 @@
 
     <!-- Mobile Menu Toggle Script -->
     <script>
+        // Counter Animation Function
+        function animateCount(id, end, duration) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            
+            let start = 0;
+            const startTime = performance.now();
+            
+            function update(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const current = Math.floor(progress * end);
+                el.textContent = current;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            
+            requestAnimationFrame(update);
+        }
+        
+        // Trigger counter animations when hero section is visible
+        document.addEventListener('DOMContentLoaded', function() {
+            let hasAnimatedHero = false;
+            
+            function checkHeroVisibility() {
+                const heroSection = document.querySelector('.hero-pattern');
+                if (!heroSection) return;
+                
+                const rect = heroSection.getBoundingClientRect();
+                
+                if (!hasAnimatedHero && rect.top < window.innerHeight && rect.bottom > 0) {
+                    hasAnimatedHero = true;
+                    animateCount('hero-years-count', 40, 2000);
+                    animateCount('hero-projects-count', 1000, 2500);
+                }
+            }
+            
+            window.addEventListener('scroll', checkHeroVisibility);
+            checkHeroVisibility(); // Check on page load
+        });
+        
+        // Mobile Menu Toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');

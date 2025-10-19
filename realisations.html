@@ -133,23 +133,31 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="py-16 bg-white border-b border-gray-100">
+    <section id="stats-section" class="py-16 bg-white border-b border-gray-100">
         <div class="container mx-auto px-5 lg:px-20">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div class="text-center">
-                    <div class="text-4xl md:text-5xl font-bold text-brand mb-2">1000+</div>
+                    <div class="text-4xl md:text-5xl font-bold text-brand mb-2">
+                        <span id="stats-projects-count">0</span>+
+                    </div>
                     <div class="text-gray-600 font-medium">Projets Réalisés</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-4xl md:text-5xl font-bold text-brand mb-2">40+</div>
+                    <div class="text-4xl md:text-5xl font-bold text-brand mb-2">
+                        <span id="stats-years-count">0</span>+
+                    </div>
                     <div class="text-gray-600 font-medium">Années d'Expertise</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-4xl md:text-5xl font-bold text-brand mb-2">98%</div>
+                    <div class="text-4xl md:text-5xl font-bold text-brand mb-2">
+                        <span id="stats-satisfaction-count">0</span>%
+                    </div>
                     <div class="text-gray-600 font-medium">Clients Satisfaits</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-4xl md:text-5xl font-bold text-brand mb-2">4.9/5</div>
+                    <div class="text-4xl md:text-5xl font-bold text-brand mb-2">
+                        <span id="stats-rating-count">0.0</span>/5
+                    </div>
                     <div class="text-gray-600 font-medium">Note Moyenne</div>
                 </div>
             </div>
@@ -535,6 +543,56 @@
 
     <!-- Scripts -->
     <script>
+        // Counter Animation Function
+        function animateCount(id, end, duration, decimals = 0) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            
+            let start = 0;
+            const startTime = performance.now();
+            
+            function update(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const current = progress * end;
+                
+                if (decimals > 0) {
+                    el.textContent = current.toFixed(decimals);
+                } else {
+                    el.textContent = Math.floor(current);
+                }
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            
+            requestAnimationFrame(update);
+        }
+        
+        // Trigger counter animations when stats section is visible
+        document.addEventListener('DOMContentLoaded', function() {
+            let hasAnimatedStats = false;
+            
+            function checkStatsVisibility() {
+                const statsSection = document.getElementById('stats-section');
+                if (!statsSection) return;
+                
+                const rect = statsSection.getBoundingClientRect();
+                
+                if (!hasAnimatedStats && rect.top < window.innerHeight && rect.bottom > 0) {
+                    hasAnimatedStats = true;
+                    animateCount('stats-projects-count', 1000, 2500);
+                    animateCount('stats-years-count', 40, 2000);
+                    animateCount('stats-satisfaction-count', 98, 2000);
+                    animateCount('stats-rating-count', 4.9, 2000, 1);
+                }
+            }
+            
+            window.addEventListener('scroll', checkStatsVisibility);
+            checkStatsVisibility(); // Check on page load
+        });
+        
         // Mobile Menu Toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
